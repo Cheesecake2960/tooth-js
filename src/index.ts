@@ -11,12 +11,12 @@ const words = [
 
 const randRange = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min);
 
-export function generateAnswer(input: string) {
+export function generateAnswer(input: string, wordList: string[] = words) {
     const answerLength = randRange(input.length / 2, input.length * 2);
     let answer = "";
 
     for (let i = 0; i < answerLength; i++) {
-        answer += words[Math.floor(Math.random() * words.length)]
+        answer += wordList[Math.floor(Math.random() * words.length)]
     }
 
     return answer;
